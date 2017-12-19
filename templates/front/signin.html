@@ -1,0 +1,97 @@
+{% from 'front/_macros.html' import static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录-iRemember</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ static('images/document_edit.png') }}">
+    <link rel="stylesheet" href="{{ static('css/bulma-0.6.0/css/bulma.css') }}">
+    <link rel="stylesheet" href="{{ static('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ static('css/signup_signin.css') }}">
+    <style>
+        img {
+            cursor: pointer;
+        }
+
+        #captcha-img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="main-box">
+    <div class="logo-box">
+        <a href="/">
+            <img src="{{ static('images/me.jpeg') }}" alt="">
+        </a>
+    </div>
+    <h2 class="page-title">iRemember-登录</h2>
+    <hr>
+    <form action="{{ url_for('front.signin') }}" method="post">
+        <div class="form-box">
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="用户名/手机号/邮箱" name="username">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-user"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="password" placeholder="密码" name="password">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="field has-addons">
+                <p class="control">
+                    <input class="input" type="text" placeholder="图形验证码" name="graph_captcha">
+                </p>
+                <p class="control graph-captcha">
+                    <a class="button is-static captcha-addon">
+                        <img id="captcha-img" src="{{ url_for('front.graph_captcha') }}" alt="">
+                    </a>
+                </p>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <div class="checkbox ">
+                        <label class="auto-login">
+                            <input type="checkbox" value="1" name="remember">&nbsp;&nbsp;10天内免登陆
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <a href="" class="forgot_pwd"><span>忘记密码？</span></a>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-info login-btn">立即登录</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control registered">
+                <span>没有账号？ <a href="{{ url_for('front.signup') }}">立即注册 &nbsp;<i
+                        class="fa fa-long-arrow-right"></i></a></span>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+        <div class="container">
+            <div class="clumns">
+                <div class="column is-6 is-offset-3">
+                    <div class="has-text-centered">
+                        <p class="footer-copyright">@copyright 2017 saltfish.cn | All rights rserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

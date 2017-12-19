@@ -1,0 +1,115 @@
+{#{% extends 'front/base.html' %}#}
+{% from 'front/_macros.html' import static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册-iRemember</title>
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ static('images/document_edit.png') }}">
+    <link rel="stylesheet" href="{{ static('css/bulma-0.6.0/css/bulma.css') }}">
+    <link rel="stylesheet" href="{{ static('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ static('css/signup_signin.css') }}">
+</head>
+<body>
+<div class="main-box">
+    <div class="logo-box">
+        <a href="/">
+            <img src="{{ static('images/me.jpeg') }}" alt="">
+        </a>
+    </div>
+    <h2 class="page-title">iRemember-注册</h2>
+    <hr>
+    <form action="{{ url_for('front.signup') }} " method="post">
+        <div class="form-box">
+            <div class="field has-addons">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="手机号码" name="telephone">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-phone"></i>
+                </span>
+                </div>
+                <div class="control">
+                    <a class="button is-info">
+                        发送验证码
+                    </a>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="短信验证码" name="sms_captcha">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-phone"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="邮箱" name="email">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-envelope"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="用户名" name="username">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-user"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="password" placeholder="密码" name="password">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="password" placeholder="确认密码" name="confirm">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field has-addons">
+                <p class="control ">
+                    <input class="input" type="text" placeholder="图形验证码" name="graph_captcha">
+                </p>
+                <p class="control graph-captcha">
+                    <a class="button is-static captcha-addon">
+                        <img src="{{ url_for('front.graph_captcha') }}" alt="">
+                    </a>
+                </p>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <button class="button is-info reg-btn" type="submit">立即注册</button>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control registered">
+                    <span>已经有账号？点此 <a href="{{ url_for('front.signin') }}">登录</a></span>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+        <div class="container">
+            <div class="clumns">
+                <div class="column is-6 is-offset-3">
+                    <div class="has-text-centered">
+                        <p class="footer-copyright">@copyright 2017 saltfish.cn | All rights rserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

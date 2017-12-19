@@ -1,0 +1,109 @@
+{% from 'front/_macros.html' import static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}-iRemember</title>
+{#    <link rel="icon" type="image/png" sizes="96x96" href="https://static001.geekbang.org/static/www/img/favicon-96x96.8e64510.png">#}
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ static('images/document_edit.png') }}">
+    <link rel="stylesheet" href="{{ static('css/bulma-0.6.0/css/bulma.css') }}">
+    <link rel="stylesheet" href="{{ static('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ static('css/base.css') }}">
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+<section class="hero is-light is-fullheight">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head is-primary" style="background-color: #fff">
+        <header class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item main-logo">
+                        {# <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">#}
+                        我是Logo
+                    </a>
+                    <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+                </div>
+                <div id="navbarMenuHeroC" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" href="{{ url_for('front.index') }}">
+                            首页
+                        </a>
+                        <a class="navbar-item" href="{{ url_for('front.list') }}">
+                            阅读
+                        </a>
+                        <a class="navbar-item">
+                            影视
+                        </a>
+                        <a class="navbar-item">
+                            论坛
+                        </a>
+                        <a class="navbar-item" href="http://xuanxiewu.com" target="_blank">
+                            博客
+                        </a>
+                        <span class="navbar-item">
+                            {% if user %}
+                                <a class="button is-info is-inverted" href="{{ url_for('front.user') }}">
+                                <span class="icon">
+                                  <i class="fa fa-user"></i>
+                                </span>
+                                <span>{{ user.username }}</span>
+                              </a>&nbsp;
+                                <a class="button is-info is-inverted" href="{{ url_for('front.logout') }}">
+                                <span class="icon">
+                                  <i class="fa fa-sign-out"></i>
+                                </span>
+                                <span>注销</span>
+                              </a>
+                            {% else %}
+                                <a class="button is-info is-inverted" href="{{ url_for('front.signin') }}">
+                                <span class="icon">
+                                  <i class="fa fa-sign-in"></i>
+                                </span>
+                                <span>登录</span>
+                              </a>&nbsp;
+                                <a class="button is-info is-inverted" href="{{ url_for('front.signup') }}">
+                                <span class="icon">
+                                  <i class="fa fa-info"></i>
+                                </span>
+                                <span>注册</span>
+                              </a>
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    {#    <hr>#}
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            {% block body %}{% endblock %}
+        </div>
+    </div>
+
+    <!-- Hero footer: will stick at the bottom -->
+    <div class="hero-foot">
+        <nav class="tabs is-boxed is-fullwidth">
+            <div class="container">
+                <div class="clumns">
+                    <div class="column is-6 is-offset-3">
+                        <div class="has-text-centered">
+                            <p class="footer-copyright">@copyright 2017 saltfish.cn | All rights rserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+
+
+</body>
+</html>

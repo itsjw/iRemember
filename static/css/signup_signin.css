@@ -1,0 +1,89 @@
+html {
+    background: #f3f3f3;
+}
+body {
+    background-color: #f3f3f3;
+    display: block;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+}
+.main-box {
+    width: 350px;
+    margin: 0 auto;
+    background: #fff;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: 50px;
+    top: 50%;
+    /*box-shadow: 0 0 5px 1px rgba(7,17,27,.1);*/
+    /*transition: all .5s;*/
+}
+
+.page-title {
+    text-align: center;
+}
+.logo-box {
+    text-align: center;
+}
+
+.logo-box img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.form-box {
+    /*text-align: center;*/
+    width: 290px;
+    margin: 0 auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+
+.captcha-addon{
+    overflow: hidden;
+    padding: 0;
+}
+
+.captcha-addon img {
+    width: 110px;
+    height: 38px;
+
+}
+
+.graph-captcha {
+    cursor: pointer;
+}
+
+.reg-btn{
+    width: 100%;
+}
+
+.login-btn {
+    width: 100%;
+}
+
+.forgot_pwd {
+    text-align: right;
+    color: #00d1b2;
+}
+
+.registered {
+    text-align: center;
+}
+
+.registered a {
+    color: #00d1b2;
+}
+
+.footer-copyright{
+    color: #d9d9d9;
+    font-size: 0.85rem;
+    /*font-family: ;*/
+    padding-bottom: 1.625rem;
+}

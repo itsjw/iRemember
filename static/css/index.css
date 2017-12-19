@@ -1,0 +1,18 @@
+.lib-btn .mv-btn {
+    border-radius: 25px;
+}
+
+.index-title {
+    padding-bottom: 50px;
+}
+
+.index-title h1 {
+    font-size: 36px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #209cee;
+
+}
+
+.main-search {
+    border-radius: 25px
+}

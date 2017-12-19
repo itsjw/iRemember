@@ -1,0 +1,57 @@
+{% from 'front/_macros.html' import static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iRemember-后台管理</title>
+    <link rel="stylesheet" href="{{ static('css/bulma-0.6.0/css/bulma.css') }}">
+    <link rel="stylesheet" href="{{ static('css/font-awesome-4.7.0/css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ static('css/cms/login.css') }}">
+</head>
+<body>
+<div class="main-box">
+    <div class="logo-box">
+        <a href="/">
+            <img src="{{ static('images/me.jpeg') }}" alt="">
+        </a>
+    </div>
+    <h2 class="page-title">iRemember-后台登录</h2>
+    <hr>
+    <form action="{{ url_for('cms.login') }}" method="post">
+        <div class="form-box">
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="text" placeholder="用户名" name="username">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-user"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control has-icons-left">
+                    <input class="input" type="password" placeholder="密码" name="password">
+                    <span class="icon is-small is-left">
+                    <i class="fa fa-lock"></i>
+                </span>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    <div class="checkbox">
+                        <label class="auto-login">
+                            <input type="checkbox" value="1" name="remember">&nbsp;&nbsp;记住我
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="field">
+                <div class="control">
+                    {#                    <p class="button is-info is-block" type="submit">立即登录</button>#}
+                    <button class="button is-info is-block login-btn" type="submit">立即登录</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
